@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 13px;
+      }
+
+      .main-container {
+        width: 100%;
+        display: block;
+        margin: 10px auto;
+      }
+
+      .print-form {
+        border: 2px solid black;
+      }
+
+      .age {
+        float: right;
+        margin-right: 120px;
+      }
+
+      .date {
+        float: right;
+        margin-right: 120px;
+      }
+
+      .dist {
+        margin-left: 10rem;
+      }
+
+      .form {
+        padding: 0.5%;
+      }
+
+      .ocular {
+        float: right;
+        margin-right: 120px;
+        display: inline;
+      }
+
+      .complaintsAndHistory {
+        display: flex;
+      }
+
+      .complaints {
+        width: 50%;
+      }
+
+      .checkItems-firstRow {
+        display: grid;
+        grid-template-columns: 4vw 12vw 10vw 10vw;
+        grid-template-rows: auto;
+
+        box-sizing: border-box;
+        width: 450px;
+        height: 50px;
+        /* margin-left: auto;
+        margin-right: auto; */
+      }
+      .checkItems-secondRow {
+        display: grid;
+        grid-template-columns: 4vw 12vw 10vw 12vw 12vw;
+        grid-template-rows: auto;
+
+        box-sizing: border-box;
+        width: 450px;
+        height: 50px;
+        /* margin-left: auto;
+        margin-right: auto; */
+      }
+      .item {
+        box-sizing: border-box;
+        width: 100px;
+        height: 50px;
+      }
+      .history {
+        width: 50%;
+      }
+      .history p {
+        margin-top: 1.5rem;
+      }
+
+      hr {
+        background-color: black;
+      }
+
+      .break {
+        margin: 0 auto;
+      }
+
+      input[type="checkbox"] {
+        /* Double-sized Checkboxes */
+        -ms-transform: scale(2);
+        /* IE */
+        -moz-transform: scale(2);
+        /* FF */
+        -webkit-transform: scale(2);
+        /* Safari and Chrome */
+        -o-transform: scale(2);
+        /* Opera */
+        transform: scale(2);
+        padding: 10px 20px;
+        margin-right: 8px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 6px;
+      }
+
+      .plus {
+        font-size: 200px;
+      }
+
+      .allergiesAndRefraction {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .allergies {
+        width: 50%;
+      }
+
+      .refraction {
+        width: 50%;
+      }
+      .table-one {
+        width: 70%;
+      }
+      .table-two-others {
+        display: flex;
+        justify-content: space-between;
+      }
+      .table-two-others ul li {
+        list-style-type: none;
+        margin: 40px 0px;
+      }
+      .table-two {
+        width: 50%;
+        height: 40px;
+        margin-top: 10px;
+      }
+      /* Add icon css */
+      .add {
+        width: 94px;
+        height: 168px;
+        color: #ccc;
+        transition: color 0.25s;
+        position: relative;
+        margin-right: 200px;
+      }
+
+      .add::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 154px;
+        margin-left: -40px;
+        margin-top: -5px;
+        border-top: 2px solid black;
+      }
+
+      .add::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 142px;
+        margin-left: 34px;
+        margin-top: -64px;
+        border-left: 2px solid black;
+      }
+      .add-icon-container {
+        display: flex;
+      }
+      .refraction-h3 {
+        /* margin-left: 200px;
+        margin-bottom: 10px; */
+        text-align: center;
+        margin-right: 12vw;
+      }
+      .refraction p {
+        margin-left: 4.5vw;
+      }
+      .refraction p span {
+        margin-left: 22.5vw;
+      }
+      .position-two {
+        width: 50%;
+        position: absolute;
+        left: 50vw;
+        top: 53%;
+      }
+      .before-footer {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 100px 100px 100px 100px 100px 80px;
+        grid-template-rows: auto;
+
+        box-sizing: border-box;
+        width: 250px;
+        height: 50px;
+      }
+      .signature {
+        border-top: 2px solid black;
+        position: absolute;
+        right: 10%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <div class="print-form">
+        <form class="form">
+          <label>Name:</label>
+          <label class="age">Age/Sex:</label>
+          <br />
+          <br />
+          <label>Address:</label>
+          <label class="dist">Dist:</label>
+          <label class="date">Date:</label>
+        </form>
+      </div>
+      <div class="break">
+        <h3>C/O</h3>
+        <hr />
+      </div>
+
+      <div class="complaintsAndHistory">
+        <div class="complaints">
+          <h3>Complaints:</h3>
+          <br />
+          <div class="checkItems-firstRow">
+            <div class="item">
+              <label>H/o</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" />
+              <label> Glaucoma</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" />
+              <label> Uveits</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" />
+              <label> Trauma</label>
+            </div>
+          </div>
+          <div class="checkItems-secondRow">
+            <div class="item">
+              <label> H/o</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" />
+              <label> DM</label>
+            </div>
+            <div>
+              <input type="checkbox" />
+              <label> HTM</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" />
+              <label> Asthama</label>
+            </div>
+            <div class="item">
+              <input type="checkbox" />
+              <label> IHD</label>
+            </div>
+          </div>
+        </div>
+        <div class="history">
+          <p>Ocular Drug History:</p>
+          <br />
+          <br />
+
+          <p>Other Drugs:</p>
+        </div>
+      </div>
+      <div class="allergiesAndRefraction">
+        <div class="allergies">
+          <h3>Any Allergies</h3>
+          <br />
+          <table class="table-one">
+            <tr>
+              <th>Visual Acuty</th>
+              <th>RE</th>
+              <th>LE</th>
+            </tr>
+            <tr>
+              <td>Unaided</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>PH</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>With PGP</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+        <div class="refraction">
+          <h3 class="refraction-h3">Refraction</h3>
+          <p>RE <span>LE</span></p>
+
+          <!-- <span class="plus">&#43;</span>
+          <span class="plus">&#43;</span> -->
+          <div class="add-icon-container">
+            <div class="add"></div>
+            <div class="add"></div>
+          </div>
+        </div>
+      </div>
+      <div class="table-two-others">
+        <div class="lists">
+          <ul>
+            <li>PGP<</li>
+            <li>AR<</li>
+            <li>EOM<</li>
+            <li>Pupils<</li>
+            <li>IOP<</li>
+          </ul>
+        </div>
+
+        <table class="table-two">
+          <tr>
+            <th></th>
+            <th>Sph</th>
+            <th>Cyl</th>
+            <th>Axis</th>
+            <th>Vision</th>
+          </tr>
+          <tr>
+            <td>R.E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>L.E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Near Add.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div class="position-two">
+        <p>CT:</p>
+        <br />
+        <p>NPC:</p>
+      </div>
+      <p>Time:</p>
+      <br />
+      <p>LMA:</p>
+      <br /><br />
+      <div class="before-footer">
+        <div>DILATION with</div>
+        <div>
+          <input type="checkbox" />
+          <label> T+</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label> T</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label> CTC</label>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <label> HOMIDE</label>
+        </div>
+        <div class="signature">Signature</div>
+      </div>
+    </div>
+  </body>
+</html>
